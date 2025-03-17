@@ -69,6 +69,8 @@
  "mut"
  "reg"
  "stack"
+ "param"
+ "global"
 ] @keyword 
 
 ; Annotations
