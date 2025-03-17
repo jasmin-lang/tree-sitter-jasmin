@@ -6,7 +6,8 @@
       "scope": "source.jasmin",
       "file-types": ["jazz", "japp", "jinc"],
       "injection-regex": "^jasmin$",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/highlights.scm",
+      "tags": "queries/tags.scm"
     }
   ],
   "metadata": {
