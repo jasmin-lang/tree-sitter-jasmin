@@ -5,7 +5,8 @@
       "camelcase": "Jasmin",
       "scope": "source.jasmin",
       "file-types": ["jazz", "japp", "jinc"],
-      "injection-regex": "^jasmin$"
+      "injection-regex": "^jasmin$",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
