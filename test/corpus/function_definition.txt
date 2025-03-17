@@ -1,0 +1,146 @@
+==============
+Basic function
+==============
+
+fn test_function() {}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body)))
+
+===========
+With params
+===========
+
+fn test_function(reg u32 param1) {}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (param_decl
+   (storage) (type)
+   (identifier))
+  (function_body)))
+
+================
+With return type
+================
+
+fn test_function(reg u32 param1) -> stack u32[3] {}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (param_decl
+   (storage) (type)
+   (identifier))
+  (storage) (type (array_type) (int_literal))
+  (function_body)))
+
+====================
+With call convention
+====================
+
+export
+fn test_function(reg u32 param1) -> stack u32[3] {}
+
+---
+
+(source_file
+ (function_definition
+  (call_conv)
+  (identifier)
+  (param_decl
+   (storage) (type)
+   (identifier))
+   (storage) (type (array_type) (int_literal))
+  (function_body)))
+
+=================
+With instructions
+=================
+
+export
+fn test_function(reg u32 param1) -> stack u32[3] {
+  reg u32 a;
+}
+
+---
+
+(source_file
+ (function_definition
+  (call_conv)
+  (identifier)
+  (param_decl
+   (storage) (type)
+   (identifier))
+   (storage) (type (array_type) (int_literal))
+  (function_body
+    (var_decl 
+     (storage) (type)
+     (identifier)))))
+
+===========
+With return
+===========
+
+export
+fn test_function(reg u32 param1) -> stack u32[3] {
+  reg u32 a;
+  return a;
+}
+
+---
+
+(source_file
+ (function_definition
+  (call_conv)
+  (identifier)
+  (param_decl
+   (storage) (type)
+   (identifier))
+   (storage) (type (array_type) (int_literal))
+  (function_body
+    (var_decl 
+     (storage) (type)
+     (identifier))
+    (return_statement
+     (identifier)))))
+
+===============
+With annotation
+===============
+
+#[returnaddress="stack"]
+export
+fn test_function(reg u32 param1) -> reg u32[3] {
+  reg u32 a;
+  return a;
+}
+
+---
+
+(source_file
+ (function_definition
+  (annotations
+   (identifier)
+   (string_literal (string_content)))
+  (call_conv)
+  (identifier)
+  (param_decl
+   (storage) (type)
+   (identifier))
+   (storage) (type (array_type) (int_literal))
+  (function_body
+    (var_decl 
+     (storage) (type)
+     (identifier))
+    (return_statement
+     (identifier)))))

@@ -1,0 +1,50 @@
+================
+Simple require
+================
+
+require "test.jinc"
+
+---
+
+(source_file
+  (require (string_literal (string_content))))
+
+================
+Require multiple
+================
+
+require "test.jinc" "other_test.jinc"
+
+---
+
+(source_file
+  (require
+   (string_literal (string_content))
+   (string_literal (string_content))))
+
+============
+Require from
+============
+
+from TEST require "test.jinc"
+
+---
+
+(source_file
+  (require 
+   (from (identifier))
+   (string_literal (string_content))))
+
+=====================
+Require multiple from
+=====================
+
+from TEST require "test.jinc" "other_test.jinc"
+
+---
+
+(source_file
+  (require
+   (from (identifier))
+   (string_literal (string_content))
+   (string_literal (string_content))))

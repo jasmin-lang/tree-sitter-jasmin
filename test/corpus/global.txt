@@ -1,0 +1,31 @@
+==============
+Integer global
+==============
+
+int global_var = 3;
+
+---
+
+(source_file
+ (global
+  (type)
+  (identifier)
+  (int_literal)))
+
+============
+Array global
+============
+
+u32[3] global_var = {1, 2, 3};
+
+---
+
+(source_file
+ (global
+   (type
+    (array_type)
+    (int_literal))
+  (identifier)
+  (int_literal)
+  (int_literal)
+  (int_literal)))

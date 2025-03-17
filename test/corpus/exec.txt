@@ -1,0 +1,51 @@
+========
+No range
+========
+
+exec test ()
+
+---
+
+(source_file
+ (exec (identifier)))
+
+
+============
+Single range
+============
+
+exec test (1:2)
+
+---
+
+(source_file
+ (exec 
+  (identifier)
+  (range (int_literal) (int_literal))))
+
+===============
+Multiple ranges
+===============
+
+exec test (1:2, 3:4)
+
+---
+
+(source_file
+ (exec 
+  (identifier)
+  (range (int_literal) (int_literal))
+  (range (int_literal) (int_literal))))
+
+=================
+Non-decimal range
+=================
+
+exec test (0x1:0o2)
+
+---
+
+(source_file
+ (exec 
+  (identifier)
+  (range (int_literal) (int_literal))))

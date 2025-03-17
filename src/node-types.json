@@ -1,0 +1,3502 @@
+[
+  {
+    "type": "aint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "int_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "alignment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "annotations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "aint",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_init",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "assign",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "lvalues",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assign_op",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "assign_op",
+    "named": true,
+    "fields": {
+      "c": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "castop",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "bin_expr",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "operator",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "annotations",
+          "named": true
+        },
+        {
+          "type": "array_init",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "call_instr",
+          "named": true
+        },
+        {
+          "type": "for_loop",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "var_decl",
+          "named": true
+        },
+        {
+          "type": "while_loop",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "call_conv",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "call_expr",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "call_instr",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cast_expr",
+    "named": true,
+    "fields": {
+      "cast": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "expression": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "castop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "svsize",
+          "named": true
+        },
+        {
+          "type": "swsize",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exec",
+    "named": true,
+    "fields": {
+      "pex_mem": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "range",
+            "named": true
+          }
+        ]
+      },
+      "pex_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "for_loop",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "loop_var": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "from",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "function_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "annotations",
+          "named": true
+        },
+        {
+          "type": "array_init",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "call_instr",
+          "named": true
+        },
+        {
+          "type": "for_loop",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "var_decl",
+          "named": true
+        },
+        {
+          "type": "while_loop",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function_definition",
+    "named": true,
+    "fields": {
+      "annot": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "annotations",
+            "named": true
+          }
+        ]
+      },
+      "annotations": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "annotations",
+            "named": true
+          }
+        ]
+      },
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "param_decl",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "function_body",
+            "named": true
+          }
+        ]
+      },
+      "call_convention": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "call_conv",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "annotations",
+            "named": true
+          },
+          {
+            "type": "storage",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "storage": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "storage",
+            "named": true
+          }
+        ]
+      },
+      "storage_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "storage",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "global",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "if_statement",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "implicites",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "aint",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index_expr",
+    "named": true,
+    "fields": {
+      "alignment": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "alignment",
+            "named": true
+          }
+        ]
+      },
+      "index": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "alignment",
+            "named": true
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "len": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "operand": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "unscaled": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": ".",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "intrinsic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "intrinsic_expr",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "instrinsic": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "intrinsic",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lvalues",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "ignore",
+          "named": true
+        },
+        {
+          "type": "implicites",
+          "named": true
+        },
+        {
+          "type": "index_expr",
+          "named": true
+        },
+        {
+          "type": "mem_access",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mem_access",
+    "named": true,
+    "fields": {
+      "alignment": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "alignment",
+            "named": true
+          }
+        ]
+      },
+      "offset": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "var": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "namespace",
+    "named": true,
+    "fields": {
+      "code": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "exec",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "namespace",
+            "named": true
+          },
+          {
+            "type": "param",
+            "named": true
+          },
+          {
+            "type": "require",
+            "named": true
+          },
+          {
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "castop",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pack_expr",
+    "named": true,
+    "fields": {
+      "ct": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "svsize",
+            "named": true
+          }
+        ]
+      },
+      "es": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "param",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "param_decl",
+    "named": true,
+    "fields": {
+      "annotations": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "annotations",
+            "named": true
+          }
+        ]
+      },
+      "default_value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "storage": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "storage",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "storage",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "var": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "variables": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "parens_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bin_expr",
+          "named": true
+        },
+        {
+          "type": "call_expr",
+          "named": true
+        },
+        {
+          "type": "cast_expr",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "index_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "intrinsic_expr",
+          "named": true
+        },
+        {
+          "type": "mem_access",
+          "named": true
+        },
+        {
+          "type": "pack_expr",
+          "named": true
+        },
+        {
+          "type": "parens_expr",
+          "named": true
+        },
+        {
+          "type": "ternary_expr",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range",
+    "named": true,
+    "fields": {
+      "ptr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "int_literal",
+            "named": true
+          }
+        ]
+      },
+      "size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "int_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "require",
+    "named": true,
+    "fields": {
+      "file": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "from",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "return_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "exec",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "namespace",
+          "named": true
+        },
+        {
+          "type": "param",
+          "named": true
+        },
+        {
+          "type": "require",
+          "named": true
+        },
+        {
+          "type": "type_alias",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "storage",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "string_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ternary_expr",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {
+      "len": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "type_alias",
+    "named": true,
+    "fields": {
+      "alias_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "aliased_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "unary_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bin_expr",
+          "named": true
+        },
+        {
+          "type": "call_expr",
+          "named": true
+        },
+        {
+          "type": "cast_expr",
+          "named": true
+        },
+        {
+          "type": "castop",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "index_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "intrinsic_expr",
+          "named": true
+        },
+        {
+          "type": "mem_access",
+          "named": true
+        },
+        {
+          "type": "pack_expr",
+          "named": true
+        },
+        {
+          "type": "parens_expr",
+          "named": true
+        },
+        {
+          "type": "ternary_expr",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_decl",
+    "named": true,
+    "fields": {
+      "e": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "storage": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "storage",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "storage",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "v": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "variables": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "while_loop",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bin_expr",
+            "named": true
+          },
+          {
+            "type": "call_expr",
+            "named": true
+          },
+          {
+            "type": "cast_expr",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "index_expr",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "intrinsic_expr",
+            "named": true
+          },
+          {
+            "type": "mem_access",
+            "named": true
+          },
+          {
+            "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parens_expr",
+            "named": true
+          },
+          {
+            "type": "ternary_expr",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_expr",
+            "named": true
+          }
+        ]
+      },
+      "post_condition": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "pre_condition": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "#aligned",
+    "named": false
+  },
+  {
+    "type": "#unaligned",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<<r",
+    "named": false
+  },
+  {
+    "type": "<<s",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "<=s",
+    "named": false
+  },
+  {
+    "type": "<=u",
+    "named": false
+  },
+  {
+    "type": "<s",
+    "named": false
+  },
+  {
+    "type": "<u",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": ">=s",
+    "named": false
+  },
+  {
+    "type": ">=u",
+    "named": false
+  },
+  {
+    "type": ">>",
+    "named": false
+  },
+  {
+    "type": ">>r",
+    "named": false
+  },
+  {
+    "type": ">>s",
+    "named": false
+  },
+  {
+    "type": ">>u",
+    "named": false
+  },
+  {
+    "type": ">s",
+    "named": false
+  },
+  {
+    "type": ">u",
+    "named": false
+  },
+  {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "ArrayInit",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "alias",
+    "named": false
+  },
+  {
+    "type": "array_type",
+    "named": true
+  },
+  {
+    "type": "bool",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "const",
+    "named": false
+  },
+  {
+    "type": "downto",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "exec",
+    "named": false
+  },
+  {
+    "type": "export",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": true
+  },
+  {
+    "type": "fn",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
+  },
+  {
+    "type": "from",
+    "named": false
+  },
+  {
+    "type": "global",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "ignore",
+    "named": true
+  },
+  {
+    "type": "inline",
+    "named": false
+  },
+  {
+    "type": "int",
+    "named": false
+  },
+  {
+    "type": "int_literal",
+    "named": true
+  },
+  {
+    "type": "keyword",
+    "named": true
+  },
+  {
+    "type": "mut",
+    "named": false
+  },
+  {
+    "type": "namespace",
+    "named": false
+  },
+  {
+    "type": "param",
+    "named": false
+  },
+  {
+    "type": "ptr",
+    "named": false
+  },
+  {
+    "type": "reg",
+    "named": false
+  },
+  {
+    "type": "require",
+    "named": false
+  },
+  {
+    "type": "return",
+    "named": false
+  },
+  {
+    "type": "stack",
+    "named": false
+  },
+  {
+    "type": "string_content",
+    "named": true
+  },
+  {
+    "type": "svsize",
+    "named": true
+  },
+  {
+    "type": "swsize",
+    "named": true
+  },
+  {
+    "type": "to",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": true
+  },
+  {
+    "type": "type",
+    "named": false
+  },
+  {
+    "type": "while",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]

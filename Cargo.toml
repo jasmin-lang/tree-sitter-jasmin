@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-jasmin"
+description = "Treesitter grammar for Jasmin, a language designed for writing high-assurance and high-speed cryptography"
+version = "0.1.0"
+authors = ["Tom Béné <tom@fantomebeig.net>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "jasmin"]
+categories = ["parsing", "text-editors"]
+repository = "https://git.sr.ht/~fantomebeignet/tree-sitter-jasmin"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.1.22"
+
+[dev-dependencies]
+tree-sitter = "0.24.6"

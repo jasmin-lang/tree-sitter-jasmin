@@ -1,0 +1,155 @@
+==========
+Array init
+==========
+
+fn test_function() {
+  ArrayInit(x);
+}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body
+   (array_init (identifier)))))
+
+==========
+Assignment
+==========
+
+fn test_function() {
+  a.[#unaligned u32 12:3] +16u= 2 if true;
+}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body
+    (assign
+     (lvalues 
+      (index_expr
+       (identifier)
+       (alignment)
+       (type)
+       (int_literal)
+       (int_literal)))
+     (assign_op (castop (swsize)))
+     (int_literal)
+     (true)))))
+
+============
+If statement
+============
+
+fn test_function() {
+  if false {
+    _ = 1;
+  } else if true {
+    _ = 2;
+  } else {
+    _ = 3;
+  }
+}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body
+    (if_statement
+     (false)
+     (block
+       (assign
+        (lvalues (ignore))
+        (assign_op)
+        (int_literal)))
+     (if_statement
+      (true)
+      (block
+        (assign
+         (lvalues (ignore))
+         (assign_op)
+         (int_literal)))
+      (block
+        (assign
+         (lvalues (ignore))
+         (assign_op)
+         (int_literal))))))))
+
+=========
+For loops
+=========
+
+fn test_function() {
+  for a = 1 to 2 {
+    b = 2;
+  }
+}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body
+    (for_loop
+     (identifier)
+     (int_literal)
+     (int_literal)
+     (block
+      (assign
+       (lvalues (identifier))
+       (assign_op)
+       (int_literal)))))))
+
+===========
+While loops
+===========
+
+fn test_function() {
+  while (x <= 3) {
+    b += (int)x;
+  }
+}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body
+    (while_loop
+     (bin_expr
+      (identifier)
+      (operator)
+      (int_literal))
+     (block
+      (assign
+       (lvalues (identifier))
+       (assign_op)
+       (cast_expr
+        (type)
+        (identifier))))))))
+
+=====================
+Variable declarations
+=====================
+
+fn test_function() {
+  reg bool a b = true;
+}
+
+---
+
+(source_file
+ (function_definition
+  (identifier)
+  (function_body
+   (var_decl
+    (storage) (type)
+    (identifier)
+    (identifier) (true)))))

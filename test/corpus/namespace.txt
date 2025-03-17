@@ -1,0 +1,25 @@
+================
+Empty Namespaces
+================
+
+namespace test {}
+
+---
+
+(source_file
+  (namespace
+   (identifier)))
+
+======================
+Namespace with require
+======================
+
+namespace test {
+  require "test.jazz"
+}
+
+---
+
+(source_file
+ (namespace (identifier)
+  (require (string_literal (string_content)))))

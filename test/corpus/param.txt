@@ -1,0 +1,13 @@
+=====
+Param
+=====
+
+param u32 param_name = 3;
+
+---
+
+(source_file
+ (param
+  (type)
+  (identifier)
+  (int_literal)))
