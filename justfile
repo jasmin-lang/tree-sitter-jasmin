@@ -26,3 +26,11 @@ fuzz: gen
 
 parse FILE: gen
 	tree-sitter parse {{FILE}}
+
+update-examples:
+	#! /usr/bin/env bash
+	set -euo pipefail
+	JASMIN_LATEST_COMMIT=$(git show jasmin/main --format=%h -s)
+	git rm -rf examples
+	git read-tree --prefix=examples/ -u jasmin/main:compiler/examples
+	git commit -m "update examples to $JASMIN_LATEST_COMMIT"
