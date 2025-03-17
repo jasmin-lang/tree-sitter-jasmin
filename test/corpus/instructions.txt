@@ -36,7 +36,7 @@ fn test_function() {
        (type)
        (int_literal)
        (int_literal)))
-     (assign_op (castop (swsize)))
+     (operator (castop (swsize)))
      (int_literal)
      (true)))))
 
@@ -65,19 +65,19 @@ fn test_function() {
      (block
        (assign
         (lvalues (ignore))
-        (assign_op)
+        (operator)
         (int_literal)))
      (if_statement
       (true)
       (block
         (assign
          (lvalues (ignore))
-         (assign_op)
+         (operator)
          (int_literal)))
       (block
         (assign
          (lvalues (ignore))
-         (assign_op)
+         (operator)
          (int_literal))))))))
 
 =========
@@ -103,7 +103,7 @@ fn test_function() {
      (block
       (assign
        (lvalues (identifier))
-       (assign_op)
+       (operator)
        (int_literal)))))))
 
 ===========
@@ -130,7 +130,7 @@ fn test_function() {
      (block
       (assign
        (lvalues (identifier))
-       (assign_op)
+       (operator)
        (cast_expr
         (type)
         (identifier))))))))

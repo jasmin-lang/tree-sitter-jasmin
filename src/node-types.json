@@ -159,7 +159,7 @@
         "required": true,
         "types": [
           {
-            "type": "assign_op",
+            "type": "operator",
             "named": true
           }
         ]
@@ -222,22 +222,6 @@
           },
           {
             "type": "unary_expr",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "assign_op",
-    "named": true,
-    "fields": {
-      "c": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "castop",
             "named": true
           }
         ]
@@ -1748,7 +1732,7 @@
           }
         ]
       },
-      "instrinsic": {
+      "intrinsic": {
         "multiple": false,
         "required": true,
         "types": [
@@ -1966,7 +1950,18 @@
   {
     "type": "operator",
     "named": true,
-    "fields": {},
+    "fields": {
+      "c": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "castop",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": false,
       "required": false,
@@ -2261,7 +2256,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "parameter",
             "named": true
           }
         ]
@@ -2312,6 +2307,10 @@
           },
           {
             "type": "pack_expr",
+            "named": true
+          },
+          {
+            "type": "parameter",
             "named": true
           },
           {
@@ -3438,6 +3437,10 @@
   {
     "type": "param",
     "named": false
+  },
+  {
+    "type": "parameter",
+    "named": true
   },
   {
     "type": "ptr",

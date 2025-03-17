@@ -1714,7 +1714,7 @@
         "members": [
           {
             "type": "FIELD",
-            "name": "instrinsic",
+            "name": "intrinsic",
             "content": {
               "type": "SYMBOL",
               "name": "intrinsic"
@@ -2450,8 +2450,13 @@
             "type": "FIELD",
             "name": "operator",
             "content": {
-              "type": "SYMBOL",
-              "name": "assign_op"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "assign_op"
+              },
+              "named": true,
+              "value": "operator"
             }
           },
           {
@@ -3372,8 +3377,13 @@
                         "type": "FIELD",
                         "name": "var",
                         "content": {
-                          "type": "SYMBOL",
-                          "name": "identifier"
+                          "type": "ALIAS",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "identifier"
+                          },
+                          "named": true,
+                          "value": "parameter"
                         }
                       },
                       {
@@ -3383,8 +3393,13 @@
                             "type": "FIELD",
                             "name": "var",
                             "content": {
-                              "type": "SYMBOL",
-                              "name": "identifier"
+                              "type": "ALIAS",
+                              "content": {
+                                "type": "SYMBOL",
+                                "name": "identifier"
+                              },
+                              "named": true,
+                              "value": "parameter"
                             }
                           },
                           {

@@ -327,7 +327,7 @@ module.exports = grammar({
       prec.left(
         PREC.call,
         seq(
-          field("instrinsic", $.intrinsic),
+          field("intrinsic", $.intrinsic),
           field("args", parens_tuple($._expr)),
         ),
       ),
@@ -415,7 +415,7 @@ module.exports = grammar({
         PREC.assignment,
         seq(
           field("left", $.lvalues),
-          field("operator", $.assign_op),
+          field("operator", alias($.assign_op, $.operator)),
           field("right", $._expr),
           field("condition", optional(seq("if", $._expr))),
           ";",
@@ -513,9 +513,9 @@ module.exports = grammar({
               "variables",
               repeat1(
                 choice(
-                  field("var", $.identifier),
+                  field("var", alias($.identifier, $.parameter)),
                   seq(
-                    field("var", $.identifier),
+                    field("var", alias($.identifier, $.parameter)),
                     "=",
                     field("default_value", $._expr),
                   ),
