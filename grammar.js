@@ -196,15 +196,20 @@ module.exports = grammar({
 
     _arr_access_len: ($) => seq(":", $._expr),
 
+    _mem_acces_address: ($) =>
+      seq(
+        field("alignment", optional($.alignment)),
+        field("var", $.identifier),
+        field("offset", optional($._mem_ofs)),
+      ),
+
     mem_access: ($) =>
       prec(
         PREC.access,
         seq(
           field("type", optional(parens(alias($._utype, $.type)))),
           "[",
-          field("alignment", optional($.alignment)),
-          field("var", $.identifier),
-          field("offset", optional($._mem_ofs)),
+          $._mem_acces_address,
           "]",
         ),
       ),
