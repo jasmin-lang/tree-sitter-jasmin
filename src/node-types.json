@@ -2993,7 +2993,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "variable",
             "named": true
           }
         ]
@@ -3064,6 +3064,10 @@
           },
           {
             "type": "unary_expr",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -3485,6 +3489,10 @@
   {
     "type": "type",
     "named": false
+  },
+  {
+    "type": "variable",
+    "named": true
   },
   {
     "type": "while",

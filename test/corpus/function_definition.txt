@@ -85,7 +85,7 @@ fn test_function(reg u32 param1) -> stack u32[3] {
   (function_body
     (var_decl 
      (storage) (type)
-     (identifier)))))
+     (variable)))))
 
 ===========
 With return
@@ -110,7 +110,7 @@ fn test_function(reg u32 param1) -> stack u32[3] {
   (function_body
     (var_decl 
      (storage) (type)
-     (identifier))
+     (variable))
     (return_statement
      (identifier)))))
 
@@ -141,6 +141,6 @@ fn test_function(reg u32 param1) -> reg u32[3] {
   (function_body
     (var_decl 
      (storage) (type)
-     (identifier))
+     (variable))
     (return_statement
      (identifier)))))

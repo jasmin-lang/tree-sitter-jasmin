@@ -532,8 +532,12 @@ module.exports = grammar({
 
     _decl: ($) =>
       choice(
-        field("v", $.identifier),
-        seq(field("v", $.identifier), "=", field("e", $._expr)),
+        field("v", alias($.identifier, $.variable)),
+        seq(
+          field("v", alias($.identifier, $.variable)),
+          "=",
+          field("e", $._expr),
+        ),
       ),
 
     var_decl: ($) =>

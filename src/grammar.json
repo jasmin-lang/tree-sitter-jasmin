@@ -3466,8 +3466,13 @@
           "type": "FIELD",
           "name": "v",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            "named": true,
+            "value": "variable"
           }
         },
         {
@@ -3477,8 +3482,13 @@
               "type": "FIELD",
               "name": "v",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                "named": true,
+                "value": "variable"
               }
             },
             {

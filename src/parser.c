@@ -8,7 +8,7 @@
 #define STATE_COUNT 530
 #define LARGE_STATE_COUNT 2
 #define SYMBOL_COUNT 175
-#define ALIAS_COUNT 3
+#define ALIAS_COUNT 4
 #define TOKEN_COUNT 88
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 49
@@ -193,6 +193,7 @@ enum ts_symbol_identifiers {
   anon_alias_sym_alias = 175,
   alias_sym_array_type = 176,
   alias_sym_parameter = 177,
+  alias_sym_variable = 178,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -374,6 +375,7 @@ static const char * const ts_symbol_names[] = {
   [anon_alias_sym_alias] = "alias",
   [alias_sym_array_type] = "array_type",
   [alias_sym_parameter] = "parameter",
+  [alias_sym_variable] = "variable",
 };
 
 static const TSSymbol ts_symbol_map[] = {
@@ -555,6 +557,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_alias_sym_alias] = anon_alias_sym_alias,
   [alias_sym_array_type] = alias_sym_array_type,
   [alias_sym_parameter] = alias_sym_parameter,
+  [alias_sym_variable] = alias_sym_variable,
 };
 
 static const TSSymbolMetadata ts_symbol_metadata[] = {
@@ -1267,6 +1270,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [alias_sym_parameter] = {
+    .visible = true,
+    .named = true,
+  },
+  [alias_sym_variable] = {
     .visible = true,
     .named = true,
   },
@@ -2124,6 +2131,9 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   [51] = {
     [1] = sym_type,
   },
+  [55] = {
+    [0] = alias_sym_variable,
+  },
   [61] = {
     [0] = alias_sym_parameter,
   },
@@ -2132,6 +2142,9 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   },
   [64] = {
     [1] = sym_type,
+  },
+  [77] = {
+    [0] = alias_sym_variable,
   },
 };
 

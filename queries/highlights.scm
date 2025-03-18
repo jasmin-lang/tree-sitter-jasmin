@@ -1,5 +1,8 @@
 ; Identifiers
-(identifier) @variable
+[
+  (identifier)
+  (variable)
+] @variable
 
 ; Function call
 (call_expr
