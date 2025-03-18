@@ -49,6 +49,7 @@ inline fn __line_ref(reg u32[16] k, inline int a b c r) -> reg u32[16]
   k[c] ^= k[a];
   _, _, k[c] = #ROL_32(k[c], r);
   //           ^ function.macro
+  //            ^ function.macro
   return k;
 }
 

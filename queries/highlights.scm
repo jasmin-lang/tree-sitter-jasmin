@@ -1,8 +1,5 @@
 ; Identifiers
-[
-  (identifier)
-  (variable)
-] @variable
+(variable) @variable
 
 (ignore) @variable.builtin
 
@@ -10,10 +7,15 @@
 (call_expr
   function: (identifier) @function.call)
 
+(call_instr
+  function: (identifier) @function.call)
+
 (intrinsic_expr
   intrinsic: (intrinsic) @function.macro)
 
 "ArrayInit" @function.builtin
+
+(exec "exec" @function.builtin)
 
 ; Function definitions
 (function_definition

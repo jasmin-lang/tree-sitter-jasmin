@@ -12,7 +12,7 @@ fn test_function() {
  (function_definition
   (identifier)
   (function_body
-   (array_init (identifier)))))
+   (array_init (variable)))))
 
 ==========
 Assignment
@@ -31,7 +31,7 @@ fn test_function() {
     (assign
      (lvalues 
       (index_expr
-       (identifier)
+       (variable)
        (alignment)
        (wsize)
        (int_literal)
@@ -102,7 +102,7 @@ fn test_function() {
      (int_literal)
      (block
       (assign
-       (lvalues (identifier))
+       (lvalues (variable))
        (operator)
        (int_literal)))))))
 
@@ -124,16 +124,16 @@ fn test_function() {
   (function_body
     (while_loop
      (bin_expr
-      (identifier)
+      (variable)
       (operator)
       (int_literal))
      (block
       (assign
-       (lvalues (identifier))
+       (lvalues (variable))
        (operator)
        (cast_expr
         (type)
-        (identifier))))))))
+        (variable))))))))
 
 =====================
 Variable declarations

@@ -49,7 +49,6 @@ const intLiteral = choice(
 const PREC = {
   call: 15,
   access: 8,
-  intrinsicary: 7,
   unary: 6,
   multiplicative: 5,
   additive: 4,
@@ -143,7 +142,7 @@ module.exports = grammar({
     exec: ($) =>
       seq(
         "exec",
-        field("pex_name", $.identifier),
+        field("pex_name", alias($.identifier, $.variable)),
         parens_tuple(field("pex_mem", $.range)),
       ),
 
@@ -155,7 +154,7 @@ module.exports = grammar({
     global: ($) =>
       seq(
         field("type", $.type),
-        field("name", $.identifier),
+        field("name", alias($.identifier, $.variable)),
         "=",
         field("value", $._gepxr),
         ";",
@@ -170,7 +169,7 @@ module.exports = grammar({
       seq(
         "param",
         field("type", $.type),
-        field("name", $.identifier),
+        field("name", alias($.identifier, $.variable)),
         "=",
         field("value", $._expr),
         ";",
@@ -199,7 +198,7 @@ module.exports = grammar({
     _mem_acces_address: ($) =>
       seq(
         field("alignment", optional($.alignment)),
-        field("var", $.identifier),
+        field("var", alias($.identifier, $.variable)),
         field("offset", optional($._mem_ofs)),
       ),
 
@@ -340,7 +339,10 @@ module.exports = grammar({
     index_expr: ($) =>
       prec(
         PREC.access,
-        seq(field("operand", $.identifier), field("index", $._arr_access)),
+        seq(
+          field("operand", alias($.identifier, $.variable)),
+          field("index", $._arr_access),
+        ),
       ),
 
     pack_expr: ($) =>
@@ -353,7 +355,7 @@ module.exports = grammar({
 
     _expr: ($) =>
       choice(
-        $.identifier,
+        alias($.identifier, $.variable),
         $.index_expr,
         $.true,
         $.false,
@@ -373,7 +375,13 @@ module.exports = grammar({
     // left values ------
     ignore: (_) => token("_"),
 
-    _lvalue: ($) => choice($.ignore, $.identifier, $.index_expr, $.mem_access),
+    _lvalue: ($) =>
+      choice(
+        $.ignore,
+        alias($.identifier, $.variable),
+        $.index_expr,
+        $.mem_access,
+      ),
     // ------
 
     // control instructions ------
@@ -423,7 +431,11 @@ module.exports = grammar({
       ),
 
     array_init: ($) =>
-      seq("ArrayInit", field("name", parens($.identifier)), ";"),
+      seq(
+        "ArrayInit",
+        field("name", parens(alias($.identifier, $.variable))),
+        ";",
+      ),
 
     call_instr: ($) =>
       seq(
@@ -447,11 +459,11 @@ module.exports = grammar({
     while_loop: ($) =>
       seq(
         "while",
-        field("pre_condition", optional($.block)),
+        field("pre_block", optional($.block)),
         "(",
-        field("body", $._expr),
+        field("condition", $._expr),
         ")",
-        field("post_condition", optional($.block)),
+        field("post_block", optional($.block)),
       ),
 
     _decl_instr: ($) => seq($.var_decl, ";"),
@@ -497,7 +509,8 @@ module.exports = grammar({
 
     call_conv: (_) => choice("export", "inline"),
 
-    return_statement: ($) => seq("return", tuple($.identifier), ";"),
+    return_statement: ($) =>
+      seq("return", tuple(alias($.identifier, $.variable)), ";"),
 
     function_body: ($) =>
       choice(braces(seq(repeat($._instr), optional($.return_statement)))),

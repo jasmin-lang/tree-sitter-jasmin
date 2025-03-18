@@ -112,7 +112,7 @@ fn test_function(reg u32 param1) -> stack u32[3] {
      (storage) (type (utype))
      (variable))
     (return_statement
-     (identifier)))))
+     (variable)))))
 
 ===============
 With annotation
@@ -143,4 +143,4 @@ fn test_function(reg u32 param1) -> reg u32[3] {
      (storage) (type (utype))
      (variable))
     (return_statement
-     (identifier)))))
+     (variable)))))
