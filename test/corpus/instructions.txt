@@ -97,7 +97,7 @@ fn test_function() {
   (identifier)
   (function_body
     (for_loop
-     (identifier)
+     (variable)
      (int_literal)
      (int_literal)
      (block

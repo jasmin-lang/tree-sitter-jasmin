@@ -2146,6 +2146,9 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   [77] = {
     [0] = alias_sym_variable,
   },
+  [97] = {
+    [1] = alias_sym_variable,
+  },
 };
 
 static const uint16_t ts_non_terminal_alias_map[] = {

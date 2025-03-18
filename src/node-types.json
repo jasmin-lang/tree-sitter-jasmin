@@ -874,7 +874,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "variable",
             "named": true
           }
         ]

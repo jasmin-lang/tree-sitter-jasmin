@@ -436,7 +436,7 @@ module.exports = grammar({
     for_loop: ($) =>
       seq(
         "for",
-        field("loop_var", $.identifier),
+        field("loop_var", alias($.identifier, $.variable)),
         "=",
         field("start", $._expr),
         choice("to", "downto"),
