@@ -33,7 +33,7 @@ fn test_function() {
       (index_expr
        (identifier)
        (alignment)
-       (type)
+       (wsize)
        (int_literal)
        (int_literal)))
      (operator (castop (swsize)))
@@ -150,6 +150,6 @@ fn test_function() {
   (identifier)
   (function_body
    (var_decl
-    (storage) (type)
+    (storage) (type (bool_type))
     (variable)
     (variable) (true)))))

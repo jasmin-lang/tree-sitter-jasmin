@@ -8,6 +8,6 @@ param u32 param_name = 3;
 
 (source_file
  (param
-  (type)
+  (type (utype))
   (identifier)
   (int_literal)))

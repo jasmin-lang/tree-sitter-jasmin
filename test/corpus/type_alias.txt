@@ -9,4 +9,4 @@ type one_type = other_type;
 (source_file
   (type_alias 
    (identifier)
-   (type)))
+   (type (alias_type))))

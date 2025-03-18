@@ -189,7 +189,7 @@ module.exports = grammar({
     _arr_access_i: ($) =>
       seq(
         field("alignment", optional($.alignment)),
-        field("type", optional(alias($._utype, $.type))),
+        field("type", optional(alias($.utype, $.wsize))),
         field("value", $._expr),
         field("len", optional($._arr_access_len)),
       ),
@@ -207,7 +207,7 @@ module.exports = grammar({
       prec(
         PREC.access,
         seq(
-          field("type", optional(parens(alias($._utype, $.type)))),
+          field("type", optional(parens(alias($.utype, $.wsize)))),
           "[",
           $._mem_acces_address,
           "]",
@@ -584,7 +584,7 @@ module.exports = grammar({
         $._nid,
         $.string_literal,
         $.keyword,
-        alias($._utype, $.type),
+        alias($.utype, $.type),
       ),
 
     aint: ($) => choice($.int_literal, seq("-", $.int_literal)),
@@ -599,28 +599,28 @@ module.exports = grammar({
 
     svsize: (_) => token(seq(VSIZE, SIGNLETTER, GENSIZE)),
 
-    _utype: (_) => /(u8|u16|u32|u64|u128|u256)/,
+    utype: (_) => /(u8|u16|u32|u64|u128|u256)/,
 
-    _cast: ($) => alias(choice($._int_type, $.swsize), $.type),
+    _cast: ($) => alias(choice($.int_type, $.swsize), $.type),
 
     castop: ($) => choice($.swsize, $.svsize),
 
-    _arr_type: ($) =>
+    array_type: ($) =>
       seq(
-        field("type", alias(choice($._utype, $.identifier), $.array_type)),
+        field("type", choice($.utype, $.identifier)),
         brackets(field("len", $._expr)),
       ),
 
-    _bool_type: (_) => "bool",
-    _int_type: (_) => "int",
+    bool_type: (_) => "bool",
+    int_type: (_) => "int",
 
     type: ($) =>
       choice(
-        $._bool_type,
-        $._int_type,
-        $._utype,
-        $._arr_type,
-        alias($.identifier, "alias"),
+        $.bool_type,
+        $.int_type,
+        $.utype,
+        $.array_type,
+        alias($.identifier, $.alias_type),
       ),
     // ------
 
