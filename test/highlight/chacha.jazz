@@ -6,32 +6,32 @@
 
 // used;
 inline fn __copy_state_ref(stack u32[16] st) -> reg u32[16], stack u32
-// <- keyword
-//     ^ keyword
-//        ^ function
+// <- keyword.modifier
+//     ^ keyword.function
+//        ^ function.definition
 {
   inline int i;
-  // <- keyword
+  // <- keyword.modifier
   //     ^ type.builtin
   //         ^ variable
   //          ^ punctuation.delimiter
   reg u32 k15;
-  // <- keyword
+  // <- keyword.modifier
   reg u32[16] k;
-  //  ^ type
+  //  ^ type.builtin
   stack u32 s_k15;
-  // <- keyword
+  // <- keyword.modifier
   k15 = st[15];
   //  ^ operator
   s_k15 = k15;
 
   for i=0 to 15
-  // <- keyword
+  // <- keyword.repeat
   { k[i] = st[i]; }
   // <- punctuation.bracket
 
   return k, s_k15;
-  // <- keyword
+  // <- keyword.return
 }
 
 
@@ -41,14 +41,14 @@ inline fn __copy_state_ref(stack u32[16] st) -> reg u32[16], stack u32
 // not exported; may be useful as spec;
 inline fn __line_ref(reg u32[16] k, inline int a b c r) -> reg u32[16]
 //                               ^ variable.parameter
-//                                  ^ keyword
+//                                  ^ keyword.modifier
 //                                                 ^ variable.parameter
 {
   k[a] += k[b];
   //   ^ operator
   k[c] ^= k[a];
   _, _, k[c] = #ROL_32(k[c], r);
-  //           ^ function.builtin
+  //           ^ function.macro
   return k;
 }
 
@@ -56,7 +56,7 @@ inline fn __line_ref(reg u32[16] k, inline int a b c r) -> reg u32[16]
 inline fn __quarter_round_ref(reg u32[16] k, inline int a b c d) -> reg u32[16]
 {
   k = __line_ref(k, a, b, d, 16);
-  //  ^ function
+  //  ^ function.call
   k = __line_ref(k, c, d, b, 12);
   k = __line_ref(k, a, b, d, 8);
   k = __line_ref(k, c, d, b, 7);
@@ -65,7 +65,7 @@ inline fn __quarter_round_ref(reg u32[16] k, inline int a b c d) -> reg u32[16]
 
 // not exported; may be useful as spec;
 inline fn __column_round_ref(reg u32[16] k, stack u32 k15) -> reg u32[16], stack u32
-//                                                                ^ type
+//                                                                ^ type.builtin
 {
   stack u32 k14;
 
@@ -380,8 +380,8 @@ inline fn __store_xor_ref(stack u64 s_output s_input s_len, reg u32[16] k, stack
   for i=2 to 8
   {
     kk[i] = (64u)((i == 7) ? k15 : k[2*i+1]);
-    //                     ^ operator
-    //                           ^ operator
+    //                     ^ keyword.conditional.ternary
+    //                           ^ keyword.conditional.ternary
     kk[i] <<= 32;
     aux = (64u)k[2*i];
     kk[i] ^= aux;
@@ -637,7 +637,7 @@ inline fn __store_last_ref(stack u64 s_output s_len, reg u32[16] k, stack u32 k1
 
   // u8 at a time
   while(j < len)
-  // <- keyword
+  // <- keyword.repeat
   {
     pi = s_k[u8 (int)j];
     (u8)[output + j] = pi;

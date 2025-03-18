@@ -4,18 +4,20 @@
   (variable)
 ] @variable
 
+(ignore) @variable.builtin
+
 ; Function call
 (call_expr
-  function: (identifier) @function)
+  function: (identifier) @function.call)
 
 (intrinsic_expr
-  intrinsic: (intrinsic) @function.builtin)
+  intrinsic: (intrinsic) @function.macro)
 
 "ArrayInit" @function.builtin
 
 ; Function definitions
 (function_definition
-  name: (identifier) @function)
+  name: (identifier) @function.definition)
 
 (parameter) @variable.parameter
 
@@ -25,17 +27,17 @@
 
 ; Types
 [
- "int"
- "bool"
- ; "u8"
- ; "u16"
- ; "u32"
- ; "u64"
- ; "u128"
- ; "u256"
+ (int_type)
+ (bool_type)
+ (utype)
+ (wsize)
  (storage)
 ] @type.builtin
-(type) @type
+
+(alias_type) @type
+
+(type_alias
+  alias_name: (identifier) @type.definition)
 
 ; Operators
 [
@@ -46,38 +48,62 @@
 
 ; Literals
 (string_literal) @string
+
 (int_literal) @number
+
 [
  (true)
  (false)
 ] @constant.builtin
 
+(escape_sequence) @string.escape
+
 ; Keywords
+"fn" @keyword.function
+
+"return" @keyword.return
+
 [
- "fn"
- "return"
- "from"
- "to"
- "downto"
- "require"
- "for"
- "while"
- "if"
- "else"
- "#aligned"
- "#unaligned"
+  "for"
+  "to"
+  "downto"
+  "while"
+] @keyword.repeat
+
+[
+  "if"
+  "else"
+] @keyword.conditional
+
+(ternary_expr
+  [
+    "?"
+    ":"
+  ] @keyword.conditional.ternary)
+
+[
+  "require"
+  "from"
+] @keyword.import
+
+[
  "export"
  "inline"
  "const"
  "mut"
  "reg"
  "stack"
+] @keyword.modifier
+
+[
+ "#aligned"
+ "#unaligned"
  "param"
  "global"
 ] @keyword 
 
 ; Annotations
-(annotations) @tag
+(annotations) @attribute
 
 ; Punctuation
 [
@@ -88,7 +114,13 @@
  "{"
  "}"
 ] @punctuation.bracket
-";" @punctuation.delimiter
+
+[
+  ";"
+  ","
+] @punctuation.delimiter
+
+(range ":" @punctuation.delimiter)
 
 ; Comments
 (comment) @comment
