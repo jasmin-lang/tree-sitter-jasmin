@@ -7,7 +7,8 @@
       "file-types": ["jazz", "japp", "jinc"],
       "injection-regex": "^jasmin$",
       "highlights": "queries/highlights.scm",
-      "tags": "queries/tags.scm"
+      "tags": "queries/tags.scm",
+      "locals": "queries/locals.scm"
     }
   ],
   "metadata": {
