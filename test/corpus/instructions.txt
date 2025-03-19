@@ -132,7 +132,7 @@ fn test_function() {
        (lvalues (variable))
        (operator)
        (cast_expr
-        (type)
+        (int_type)
         (variable))))))))
 
 =====================
@@ -150,6 +150,6 @@ fn test_function() {
   (identifier)
   (function_body
    (var_decl
-    (storage) (type (bool_type))
+    (storage) (bool_type)
     (variable)
     (variable) (true)))))

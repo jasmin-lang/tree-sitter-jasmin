@@ -10,11 +10,11 @@
   (variable)
 ] @local.definition
 
-(type_alias
+(type_definition
  alias_name: (identifier) @local.definition.type)
 
 ; References
 (identifier) @local.reference
 
-((alias_type) @local.reference
+((type_alias) @local.reference
  (#set! reference.kind "type"))

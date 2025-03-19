@@ -107,16 +107,16 @@ module.exports = grammar({
         $.global,
         $.exec,
         $.require,
-        $.type_alias,
+        $.type_definition,
         $.namespace,
       ),
 
-    type_alias: ($) =>
+    type_definition: ($) =>
       seq(
         "type",
         field("alias_name", $.identifier),
         "=",
-        field("aliased_type", $.type),
+        field("aliased_type", $._type),
         ";",
       ),
 
@@ -153,7 +153,7 @@ module.exports = grammar({
     // global ------
     global: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         field("name", alias($.identifier, $.variable)),
         "=",
         field("value", $._gepxr),
@@ -168,7 +168,7 @@ module.exports = grammar({
     param: ($) =>
       seq(
         "param",
-        field("type", $.type),
+        field("type", $._type),
         field("name", alias($.identifier, $.variable)),
         "=",
         field("value", $._expr),
@@ -573,7 +573,7 @@ module.exports = grammar({
         field("storage_type", $._stor_type),
       ),
 
-    _stor_type: ($) => seq(field("storage", $.storage), field("type", $.type)),
+    _stor_type: ($) => seq(field("storage", $.storage), field("type", $._type)),
     // ------
 
     // annotations ------
@@ -592,13 +592,7 @@ module.exports = grammar({
       ),
 
     _simple_attribute: ($) =>
-      choice(
-        $.aint,
-        $._nid,
-        $.string_literal,
-        $.keyword,
-        alias($.utype, $.type),
-      ),
+      choice($.aint, $._nid, $.string_literal, $.keyword, $.utype),
 
     aint: ($) => choice($.int_literal, seq("-", $.int_literal)),
 
@@ -614,7 +608,7 @@ module.exports = grammar({
 
     utype: (_) => /(u8|u16|u32|u64|u128|u256)/,
 
-    _cast: ($) => alias(choice($.int_type, $.swsize), $.type),
+    _cast: ($) => choice($.int_type, $.swsize),
 
     castop: ($) => choice($.swsize, $.svsize),
 
@@ -627,13 +621,13 @@ module.exports = grammar({
     bool_type: (_) => "bool",
     int_type: (_) => "int",
 
-    type: ($) =>
+    _type: ($) =>
       choice(
         $.bool_type,
         $.int_type,
         $.utype,
         $.array_type,
-        alias($.identifier, $.alias_type),
+        alias($.identifier, $.type_alias),
       ),
     // ------
 

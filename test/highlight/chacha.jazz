@@ -487,6 +487,7 @@ inline fn __store_xor_last_ref(stack u64 s_output s_input s_len, reg u32[16] k, 
   {
     t = (u64)[input + 8*j];
     t ^= s_k[u64 (int)j];
+    //            ^ type.builtin
     (u64)[output + 8*j] = t;
     j += 1;
   }

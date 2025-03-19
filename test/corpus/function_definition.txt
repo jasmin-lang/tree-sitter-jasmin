@@ -23,7 +23,7 @@ fn test_function(reg u32 param1) {}
  (function_definition
   (identifier)
   (param_decl
-   (storage) (type (utype))
+   (storage) (utype)
    (parameter))
   (function_body)))
 
@@ -39,9 +39,9 @@ fn test_function(reg u32 param1) -> stack u32[3] {}
  (function_definition
   (identifier)
   (param_decl
-   (storage) (type (utype))
+   (storage) (utype)
    (parameter))
-  (storage) (type (array_type (utype) (int_literal)))
+  (storage) (array_type (utype) (int_literal))
   (function_body)))
 
 ====================
@@ -58,9 +58,9 @@ fn test_function(reg u32 param1) -> stack u32[3] {}
   (call_conv)
   (identifier)
   (param_decl
-   (storage) (type (utype))
+   (storage) (utype)
    (parameter))
-   (storage) (type (array_type (utype) (int_literal)))
+   (storage) (array_type (utype) (int_literal))
   (function_body)))
 
 =================
@@ -79,12 +79,12 @@ fn test_function(reg u32 param1) -> stack u32[3] {
   (call_conv)
   (identifier)
   (param_decl
-   (storage) (type (utype))
+   (storage) (utype)
    (parameter))
-   (storage) (type (array_type (utype) (int_literal)))
+   (storage) (array_type (utype) (int_literal))
   (function_body
     (var_decl 
-     (storage) (type (utype))
+     (storage) (utype)
      (variable)))))
 
 ===========
@@ -104,12 +104,12 @@ fn test_function(reg u32 param1) -> stack u32[3] {
   (call_conv)
   (identifier)
   (param_decl
-   (storage) (type (utype))
+   (storage) (utype)
    (parameter))
-   (storage) (type (array_type (utype) (int_literal)))
+   (storage) (array_type (utype) (int_literal))
   (function_body
     (var_decl 
-     (storage) (type (utype))
+     (storage) (utype)
      (variable))
     (return_statement
      (variable)))))
@@ -135,12 +135,12 @@ fn test_function(reg u32 param1) -> reg u32[3] {
   (call_conv)
   (identifier)
   (param_decl
-   (storage) (type (utype))
+   (storage) (utype)
    (parameter))
-   (storage) (type (array_type (utype) (int_literal)))
+   (storage) (array_type (utype) (int_literal))
   (function_body
     (var_decl 
-     (storage) (type (utype))
+     (storage) (utype)
      (variable))
     (return_statement
      (variable)))))

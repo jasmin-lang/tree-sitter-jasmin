@@ -7,6 +7,6 @@ type one_type = other_type;
 ---
 
 (source_file
-  (type_alias 
+  (type_definition 
    (identifier)
-   (type (alias_type))))
+   (type_alias)))

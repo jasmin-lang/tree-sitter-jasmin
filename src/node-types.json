@@ -44,7 +44,7 @@
           "named": true
         },
         {
-          "type": "type",
+          "type": "utype",
           "named": true
         }
       ]
@@ -761,7 +761,11 @@
             "named": false
           },
           {
-            "type": "type",
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "swsize",
             "named": true
           }
         ]
@@ -1189,11 +1193,27 @@
             "named": true
           },
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
             "type": "storage",
             "named": true
           },
           {
-            "type": "type",
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -1213,11 +1233,27 @@
         "required": false,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
             "type": "storage",
             "named": true
           },
           {
-            "type": "type",
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -1227,7 +1263,23 @@
         "required": false,
         "types": [
           {
-            "type": "type",
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -1253,7 +1305,23 @@
         "required": true,
         "types": [
           {
-            "type": "type",
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -1455,7 +1523,7 @@
           "named": true
         },
         {
-          "type": "type",
+          "type": "utype",
           "named": true
         }
       ]
@@ -2004,7 +2072,7 @@
             "named": true
           },
           {
-            "type": "type_alias",
+            "type": "type_definition",
             "named": true
           },
           {
@@ -2164,7 +2232,23 @@
         "required": true,
         "types": [
           {
-            "type": "type",
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -2324,11 +2408,27 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
             "type": "storage",
             "named": true
           },
           {
-            "type": "type",
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -2583,7 +2683,7 @@
           "named": true
         },
         {
-          "type": "type_alias",
+          "type": "type_definition",
           "named": true
         }
       ]
@@ -2806,38 +2906,7 @@
     }
   },
   {
-    "type": "type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "alias_type",
-          "named": true
-        },
-        {
-          "type": "array_type",
-          "named": true
-        },
-        {
-          "type": "bool_type",
-          "named": true
-        },
-        {
-          "type": "int_type",
-          "named": true
-        },
-        {
-          "type": "utype",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "type_alias",
+    "type": "type_definition",
     "named": true,
     "fields": {
       "alias_name": {
@@ -2855,7 +2924,23 @@
         "required": true,
         "types": [
           {
-            "type": "type",
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -3014,11 +3099,27 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
             "type": "storage",
             "named": true
           },
           {
-            "type": "type",
+            "type": "type_alias",
+            "named": true
+          },
+          {
+            "type": "utype",
             "named": true
           }
         ]
@@ -3374,10 +3475,6 @@
     "named": false
   },
   {
-    "type": "alias_type",
-    "named": true
-  },
-  {
     "type": "bool_type",
     "named": true
   },
@@ -3516,6 +3613,10 @@
   {
     "type": "type",
     "named": false
+  },
+  {
+    "type": "type_alias",
+    "named": true
   },
   {
     "type": "utype",

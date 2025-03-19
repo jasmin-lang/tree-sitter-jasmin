@@ -35,7 +35,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "type_alias"
+          "name": "type_definition"
         },
         {
           "type": "SYMBOL",
@@ -43,7 +43,7 @@
         }
       ]
     },
-    "type_alias": {
+    "type_definition": {
       "type": "SEQ",
       "members": [
         {
@@ -67,7 +67,7 @@
           "name": "aliased_type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -275,7 +275,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -372,7 +372,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -3717,7 +3717,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         }
       ]
@@ -3909,13 +3909,8 @@
           "name": "keyword"
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "utype"
-          },
-          "named": true,
-          "value": "type"
+          "type": "SYMBOL",
+          "name": "utype"
         }
       ]
     },
@@ -4023,22 +4018,17 @@
       "value": "(u8|u16|u32|u64|u128|u256)"
     },
     "_cast": {
-      "type": "ALIAS",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "int_type"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "swsize"
-          }
-        ]
-      },
-      "named": true,
-      "value": "type"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "int_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "swsize"
+        }
+      ]
     },
     "castop": {
       "type": "CHOICE",
@@ -4104,7 +4094,7 @@
       "type": "STRING",
       "value": "int"
     },
-    "type": {
+    "_type": {
       "type": "CHOICE",
       "members": [
         {
@@ -4130,7 +4120,7 @@
             "name": "identifier"
           },
           "named": true,
-          "value": "alias_type"
+          "value": "type_alias"
         }
       ]
     },

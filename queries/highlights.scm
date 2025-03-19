@@ -33,19 +33,19 @@
  (bool_type)
  (utype)
  (wsize)
+ (swsize)
+ (svsize)
  (storage)
 ] @type.builtin
 
-(alias_type) @type
+(type_alias) @type
 
-(type_alias
+(type_definition
   alias_name: (identifier) @type.definition)
 
 ; Operators
 [
  (operator)
- ":"
- "?"
 ] @operator
 
 ; Literals
