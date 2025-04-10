@@ -12,6 +12,7 @@ const SIZE = /(8|16|32|64|128|256)/;
 const SIGNLETTER = /(s|u)/;
 const GENSIZE = /(1|2|4|8|16|32|64|128)/;
 const VSIZE = /(2|4|8|16|32)/;
+const WSIGN = /(s|u)i?/;
 
 const hexDigit = /[0-9a-fA-F]/;
 const octalDigit = /[0-7]/;
@@ -61,8 +62,8 @@ const PREC = {
 
 const multiplicativeOperators = [
   "*",
-  "/",
-  "%",
+  seq("/", optional(SIGNLETTER)),
+  seq("%", optional(SIGNLETTER)),
   "<<",
   ">>",
   ">>r",
@@ -602,11 +603,11 @@ module.exports = grammar({
     // ------
 
     // type expressions ------
-    swsize: (_) => token(seq(SIZE, SIGNLETTER)),
+    swsize: (_) => token(seq(SIZE, WSIGN)),
 
     svsize: (_) => token(seq(VSIZE, SIGNLETTER, GENSIZE)),
 
-    utype: (_) => /(u8|u16|u32|u64|u128|u256)/,
+    utype: (_) => /(s|u)i?(8|16|32|64|128|256)/,
 
     _cast: ($) => choice($.int_type, $.swsize),
 
@@ -619,7 +620,7 @@ module.exports = grammar({
       ),
 
     bool_type: (_) => "bool",
-    int_type: (_) => "int",
+    int_type: (_) => /(t|s)?int/,
 
     _type: ($) =>
       choice(

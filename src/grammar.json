@@ -827,8 +827,25 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "/"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "/"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PATTERN",
+                      "value": "(s|u)"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "CHOICE",
@@ -848,8 +865,25 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "%"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "%"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PATTERN",
+                      "value": "(s|u)"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "CHOICE",
@@ -3988,7 +4022,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "(s|u)"
+            "value": "(s|u)i?"
           }
         ]
       }
@@ -4015,7 +4049,7 @@
     },
     "utype": {
       "type": "PATTERN",
-      "value": "(u8|u16|u32|u64|u128|u256)"
+      "value": "(s|u)i?(8|16|32|64|128|256)"
     },
     "_cast": {
       "type": "CHOICE",
@@ -4091,8 +4125,8 @@
       "value": "bool"
     },
     "int_type": {
-      "type": "STRING",
-      "value": "int"
+      "type": "PATTERN",
+      "value": "(t|s)?int"
     },
     "_type": {
       "type": "CHOICE",
