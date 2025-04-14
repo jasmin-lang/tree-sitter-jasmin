@@ -452,6 +452,19 @@
         ]
       }
     },
+    "access_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "utype"
+        }
+      ]
+    },
     "_arr_access_i": {
       "type": "SEQ",
       "members": [
@@ -478,13 +491,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "ALIAS",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "utype"
-                },
-                "named": true,
-                "value": "wsize"
+                "type": "SYMBOL",
+                "name": "access_type"
               },
               {
                 "type": "BLANK"
@@ -552,6 +560,36 @@
         },
         {
           "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ":"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "utype"
+                    }
+                  ]
+                },
+                "named": true,
+                "value": "wsize"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
           "name": "var",
           "content": {
             "type": "ALIAS",
@@ -587,40 +625,6 @@
       "content": {
         "type": "SEQ",
         "members": [
-          {
-            "type": "FIELD",
-            "name": "type",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "("
-                    },
-                    {
-                      "type": "ALIAS",
-                      "content": {
-                        "type": "SYMBOL",
-                        "name": "utype"
-                      },
-                      "named": true,
-                      "value": "wsize"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": ")"
-                    }
-                  ]
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            }
-          },
           {
             "type": "STRING",
             "value": "["
@@ -4074,6 +4078,19 @@
         {
           "type": "SYMBOL",
           "name": "svsize"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ":"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "utype"
+            }
+          ]
         }
       ]
     },

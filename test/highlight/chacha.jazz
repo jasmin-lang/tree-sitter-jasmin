@@ -317,15 +317,16 @@ inline fn __init_ref(reg u64 nonce key) -> stack u32[16]
 
   // reads 8 u32 from pointer key
   for i=0 to 8
-  { t = (u32)[key + 4*i];
+  { t = [:u32 key + 4*i];
+  //     ^ type.builtin
     st[4+i] = t; }
 
   // 64-bit counter (same as st[12] = 0; st[13] = 0;)
-  st[u64 6] = 0;
+  st[:u64 6] = 0;
 
   // reads 2 u32 from pointer nonce
   for i=0 to 2
-  { t = (u32)[nonce + 4*i];
+  { t = [:u32 nonce + 4*i];
     st[14+i] = t; }
 
   return st;
@@ -336,9 +337,9 @@ inline fn __increment_counter_ref(stack u32[16] st) -> stack u32[16]
 {
   reg u64 t;
 
-  t = st[u64 6];
+  t = st[:u64 6];
   t += 1;
-  st[u64 6] = t;
+  st[:u64 6] = t;
 
   return st;
 }
@@ -367,16 +368,16 @@ inline fn __store_xor_ref(stack u64 s_output s_input s_len, reg u32[16] k, stack
   aux = (64u)k[0];
   kk[0] ^= aux;
   input = s_input;
-  kk[0] ^= (u64)[input + 8*0];
+  kk[0] ^= [:u64 input + 8*0];
 
   // i = 1 : 2 dead
   kk[1] = (64u) k[3];
   kk[1] <<= 32;
   aux = (64u)k[2];
   kk[1] ^= aux;
-  kk[1] ^= (u64)[input + 8*1];
+  kk[1] ^= [:u64 input + 8*1];
   output = s_output;
-  (u64)[output + 8*0] = kk[0];
+  [:u64 output + 8*0] = kk[0];
 
   for i=2 to 8
   {
@@ -386,11 +387,11 @@ inline fn __store_xor_ref(stack u64 s_output s_input s_len, reg u32[16] k, stack
     kk[i] <<= 32;
     aux = (64u)k[2*i];
     kk[i] ^= aux;
-    kk[i] ^= (u64)[input + 8*i];
-    (u64)[output + 8*(i-1)] = kk[i-1];
+    kk[i] ^= [:u64 input + 8*i];
+    [:u64 output + 8*(i-1)] = kk[i-1];
   }
 
-  (u64)[output + 8*7] = kk[7];
+  [:u64 output + 8*7] = kk[7];
 
   len = s_len;
 
@@ -422,7 +423,7 @@ inline fn __sum_states_store_xor_ref(
   aux = (64u)k[0];
   kk[0] ^= aux;
   input = s_input;
-  kk[0] ^= (u64)[input + 8*0];
+  kk[0] ^= [:u64 input + 8*0];
 
   // i = 1 : 2 dead
                                                   k[3] += st[3];
@@ -431,9 +432,9 @@ inline fn __sum_states_store_xor_ref(
   kk[1] <<= 32;
   aux = (64u)k[2];
   kk[1] ^= aux;
-  kk[1] ^= (u64)[input + 8*1];
+  kk[1] ^= [:u64 input + 8*1];
   output = s_output;
-  (u64)[output + 8*0] = kk[0];
+  [:u64 output + 8*0] = kk[0];
 
   for i=2 to 8
   {
@@ -444,11 +445,11 @@ inline fn __sum_states_store_xor_ref(
     kk[i] <<= 32;
     aux = (64u)k[2*i];
     kk[i] ^= aux;
-    kk[i] ^= (u64)[input + 8*i];
-    (u64)[output + 8*(i-1)] = kk[i-1];
+    kk[i] ^= [:u64 input + 8*i];
+    [:u64 output + 8*(i-1)] = kk[i-1];
   }
 
-  (u64)[output + 8*7] = kk[7];
+  [:u64 output + 8*7] = kk[7];
 
   len = s_len;
 
@@ -485,10 +486,10 @@ inline fn __store_xor_last_ref(stack u64 s_output s_input s_len, reg u32[16] k, 
   j = 0;
   while(j < len8)
   {
-    t = (u64)[input + 8*j];
-    t ^= s_k[u64 (int)j];
-    //            ^ type.builtin
-    (u64)[output + 8*j] = t;
+    t = [:u64 input + 8*j];
+    t ^= s_k[:u64 (int)j];
+    //             ^ type.builtin
+    [:u64 output + 8*j] = t;
     j += 1;
   }
   j <<= 3;
@@ -496,9 +497,9 @@ inline fn __store_xor_last_ref(stack u64 s_output s_input s_len, reg u32[16] k, 
   // u8 at a time
   while(j < len)
   {
-    pi = (u8)[input + j];
-    pi ^= s_k[u8 (int)j];
-    (u8)[output + j] = pi;
+    pi = [:u8 input + j];
+    pi ^= s_k[:u8 (int)j];
+    [:u8 output + j] = pi;
     j += 1;
   }
 }
@@ -532,7 +533,7 @@ inline fn __store_ref(stack u64 s_output s_len, reg u32[16] k, stack u32 k15) ->
   aux = (64u)k[2];
   kk[1] ^= aux;
   output = s_output;
-  (u64)[output + 8*0] = kk[0];
+  [:u64 output + 8*0] = kk[0];
 
   for i=2 to 8
   {
@@ -540,10 +541,10 @@ inline fn __store_ref(stack u64 s_output s_len, reg u32[16] k, stack u32 k15) ->
     kk[i] <<= 32;
     aux = (64u)k[2*i];
     kk[i] ^= aux;
-    (u64)[output + 8*(i-1)] = kk[i-1];
+    [:u64 output + 8*(i-1)] = kk[i-1];
   }
 
-  (u64)[output + 8*7] = kk[7];
+  [:u64 output + 8*7] = kk[7];
 
   len = s_len;
 
@@ -582,7 +583,7 @@ inline fn __sum_states_store_ref(
   aux = (64u)k[2];
   kk[1] ^= aux;
   output = s_output;
-  (u64)[output + 8*0] = kk[0];
+  [:u64 output + 8*0] = kk[0];
 
   for i=2 to 8
   {
@@ -593,10 +594,10 @@ inline fn __sum_states_store_ref(
     kk[i] <<= 32;
     aux = (64u)k[2*i];
     kk[i] ^= aux;
-    (u64)[output + 8*(i-1)] = kk[i-1];
+    [:u64 output + 8*(i-1)] = kk[i-1];
   }
 
-  (u64)[output + 8*7] = kk[7];
+  [:u64 output + 8*7] = kk[7];
 
   len = s_len;
 
@@ -631,8 +632,8 @@ inline fn __store_last_ref(stack u64 s_output s_len, reg u32[16] k, stack u32 k1
   j = 0;
   while(j < len8)
   {
-    t = s_k[u64 (int)j];
-    (u64)[output + 8*j] = t;
+    t = s_k[:u64 (int)j];
+    [:u64 output + 8*j] = t;
     j += 1;
   }
   j <<= 3;
@@ -641,8 +642,8 @@ inline fn __store_last_ref(stack u64 s_output s_len, reg u32[16] k, stack u32 k1
   while(j < len)
   // <- keyword.repeat
   {
-    pi = s_k[u8 (int)j];
-    (u8)[output + j] = pi;
+    pi = s_k[:u8 (int)j];
+    [:u8 output + j] = pi;
     j += 1;
   }
 }

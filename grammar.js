@@ -186,10 +186,12 @@ module.exports = grammar({
         ),
       ),
 
+    access_type: ($) => seq(":", $.utype),
+
     _arr_access_i: ($) =>
       seq(
         field("alignment", optional($.alignment)),
-        field("type", optional(alias($.utype, $.wsize))),
+        field("type", optional($.access_type)),
         field("value", $._expr),
         field("len", optional($._arr_access_len)),
       ),
@@ -199,20 +201,12 @@ module.exports = grammar({
     _mem_acces_address: ($) =>
       seq(
         field("alignment", optional($.alignment)),
+        field("type", optional(alias(seq(":", $.utype), $.wsize))),
         field("var", alias($.identifier, $.variable)),
         field("offset", optional($._mem_ofs)),
       ),
 
-    mem_access: ($) =>
-      prec(
-        PREC.access,
-        seq(
-          field("type", optional(parens(alias($.utype, $.wsize)))),
-          "[",
-          $._mem_acces_address,
-          "]",
-        ),
-      ),
+    mem_access: ($) => prec(PREC.access, seq("[", $._mem_acces_address, "]")),
 
     alignment: (_) => choice("#aligned", "#unaligned"),
 
@@ -611,7 +605,7 @@ module.exports = grammar({
 
     _cast: ($) => choice($.int_type, $.swsize),
 
-    castop: ($) => choice($.swsize, $.svsize),
+    castop: ($) => choice($.swsize, $.svsize, seq(":", $.utype)),
 
     array_type: ($) =>
       seq(
