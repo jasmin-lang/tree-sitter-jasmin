@@ -565,22 +565,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "ALIAS",
-                "content": {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ":"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "utype"
-                    }
-                  ]
-                },
-                "named": true,
-                "value": "wsize"
+                "type": "SYMBOL",
+                "name": "access_type"
               },
               {
                 "type": "BLANK"

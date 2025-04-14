@@ -2029,11 +2029,11 @@
         ]
       },
       "type": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "wsize",
+            "type": "access_type",
             "named": true
           }
         ]
@@ -3640,10 +3640,6 @@
   {
     "type": "while",
     "named": false
-  },
-  {
-    "type": "wsize",
-    "named": true
   },
   {
     "type": "{",

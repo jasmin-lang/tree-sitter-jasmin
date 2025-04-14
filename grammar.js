@@ -201,7 +201,7 @@ module.exports = grammar({
     _mem_acces_address: ($) =>
       seq(
         field("alignment", optional($.alignment)),
-        field("type", optional(alias(seq(":", $.utype), $.wsize))),
+        field("type", optional($.access_type)),
         field("var", alias($.identifier, $.variable)),
         field("offset", optional($._mem_ofs)),
       ),

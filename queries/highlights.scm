@@ -32,13 +32,13 @@
  (int_type)
  (bool_type)
  (utype)
- (wsize)
  (swsize)
  (svsize)
  (storage)
 ] @type.builtin
 
 (type_alias) @type
+(access_type) @type
 
 (type_definition
   alias_name: (identifier) @type.definition)
