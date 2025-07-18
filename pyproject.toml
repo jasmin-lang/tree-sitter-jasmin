@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tree-sitter-jasmin"
 description = "Treesitter grammar for Jasmin, a language designed for writing high-assurance and high-speed cryptography"
-version = "0.1.0"
+version = "2025.6.0"
 keywords = ["incremental", "parsing", "tree-sitter", "jasmin"]
 classifiers = [
   "Intended Audience :: Developers",
@@ -19,7 +19,7 @@ license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://git.sr.ht/~fantomebeignet/tree-sitter-jasmin"
+Homepage = "https://github.com/jasmin-lang/jasmin"
 
 [project.optional-dependencies]
 core = ["tree-sitter~=0.22"]

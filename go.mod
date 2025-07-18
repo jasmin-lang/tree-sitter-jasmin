@@ -1,4 +1,4 @@
-module git.sr.ht/~fantomebeignet/tree-sitter-jasmin
+module https://github.com/jasmin-lang/jasmin
 
 go 1.22
 

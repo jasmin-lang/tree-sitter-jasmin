@@ -1,13 +1,13 @@
 [package]
 name = "tree-sitter-jasmin"
 description = "Treesitter grammar for Jasmin, a language designed for writing high-assurance and high-speed cryptography"
-version = "0.1.0"
+version = "2025.6.0"
 authors = ["Tom Béné <tom@fantomebeig.net>"]
 license = "MIT"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "jasmin"]
 categories = ["parsing", "text-editors"]
-repository = "https://git.sr.ht/~fantomebeignet/tree-sitter-jasmin"
+repository = "https://github.com/jasmin-lang/jasmin"
 edition = "2021"
 autoexamples = false
 

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-jasmin
-        VERSION "0.1.0"
+        VERSION "2025.6.0"
         DESCRIPTION "Treesitter grammar for Jasmin, a language designed for writing high-assurance and high-speed cryptography"
-        HOMEPAGE_URL "https://git.sr.ht/~fantomebeignet/tree-sitter-jasmin"
+        HOMEPAGE_URL "https://github.com/jasmin-lang/jasmin"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

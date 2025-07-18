@@ -3,8 +3,8 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-jasmin
-HOMEPAGE_URL := https://git.sr.ht/~fantomebeignet/tree-sitter-jasmin
-VERSION := 0.1.0
+HOMEPAGE_URL := https://github.com/jasmin-lang/jasmin
+VERSION := 2025.6.0
 
 # repository
 SRC_DIR := src
