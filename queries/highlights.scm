@@ -89,6 +89,10 @@
 ] @keyword.import
 
 [
+ "type"
+] @keyword.type
+
+[
  "export"
  "inline"
  "const"
