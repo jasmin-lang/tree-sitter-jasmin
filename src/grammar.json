@@ -576,31 +576,10 @@
         },
         {
           "type": "FIELD",
-          "name": "var",
+          "name": "expr",
           "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            "named": true,
-            "value": "variable"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "offset",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_mem_ofs"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_expr"
           }
         }
       ]

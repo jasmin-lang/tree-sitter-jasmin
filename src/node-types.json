@@ -1958,18 +1958,10 @@
           }
         ]
       },
-      "offset": {
-        "multiple": true,
-        "required": false,
+      "expr": {
+        "multiple": false,
+        "required": true,
         "types": [
-          {
-            "type": "+",
-            "named": false
-          },
-          {
-            "type": "-",
-            "named": false
-          },
           {
             "type": "bin_expr",
             "named": true
@@ -2034,16 +2026,6 @@
         "types": [
           {
             "type": "access_type",
-            "named": true
-          }
-        ]
-      },
-      "var": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "variable",
             "named": true
           }
         ]
