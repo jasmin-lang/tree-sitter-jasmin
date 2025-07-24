@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - grammar.js
+      - src/**
+      - test/**
+      - bindings/**
+      - tree-sitter.json
+  pull_request:
+    paths:
+      - grammar.js
+      - src/**
+      - test/**
+      - bindings/**
+      - tree-sitter.json
+
+env:
+  COMPILER_VERSION: "v2025.06.0"
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Jasmin repository
+        uses: actions/checkout@v4
+        with:
+          repository: jasmin-lang/jasmin
+          path: jasmin-examples
+          ref: ${{ env.COMPILER_VERSION }}
+          sparse-checkout: |
+            compiler/examples/*
+          sparse-checkout-cone-mode: false
+
+      - name: Set up tree-sitter CLI
+        uses: tree-sitter/setup-action/cli@v2
+
+      - name: Test parser
+        run: |
+          tree-sitter test
+
+      - name: Fuzz parser
+        run: |
+          tree-sitter fuzz
+
+      - name: Test again compiler examples
+        run: |
+          FILES=$(find "jasmin-examples/compiler/examples" -iregex '.*\.\(jazz\|japp\|jinc\)$' -type f | tr '\n' ' ')
+          tree-sitter parse $FILES -q --stat

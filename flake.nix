@@ -45,6 +45,7 @@
             typescript-language-server
             just
             graphviz
+            act
           ];
         };
       };

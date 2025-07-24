@@ -35,3 +35,7 @@ dist/
 *.tar.gz
 *.tgz
 *.zip
+
+# Local GH Actions testing
+.env
+.secrets
