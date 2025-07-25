@@ -1,3 +1,0 @@
-param bool use_shufb = false;
-
-require "gimliv.jinc"
