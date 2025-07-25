@@ -20,6 +20,7 @@ Assignment
 
 fn test_function() {
   a.[#unaligned :u32 12:3] +16u= 2 if true;
+  x = [(64u)(in1 + 8*i)];
 }
 
 ---
@@ -38,7 +39,21 @@ fn test_function() {
        (int_literal)))
      (operator (castop (swsize)))
      (int_literal)
-     (true)))))
+     (true))
+    (assign
+     (lvalues (variable))
+     (operator)
+     (mem_access
+      (cast_expr
+        (swsize)
+        (parens_expr
+          (bin_expr
+           (variable)
+           (operator)
+           (bin_expr
+            (int_literal)
+            (operator)
+            (variable))))))))))
 
 ============
 If statement
