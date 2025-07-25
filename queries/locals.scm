@@ -4,17 +4,29 @@
   (function_body)
 ] @local.scope
 
-; Definitions
-[
-  (parameter)
-  (variable)
-] @local.definition
-
-(type_definition
-  alias_name: (identifier) @local.definition.type)
+(namespace
+  code: _ @local.scope)
 
 ; References
-(identifier) @local.reference
+(variable) @local.reference
 
 ((type_alias) @local.reference
   (#set! reference.kind "type"))
+
+; Definitions
+((type_definition
+  alias_name: (identifier) @local.definition)
+  (#set! definition.kind "type"))
+
+((function_definition
+  name: (identifier) @local.definition)
+  (#set! definition.kind "function"))
+
+((var_decl
+  (variable) @local.definition)
+  (#set! definition.kind "variable"))
+
+((namespace
+  name: (identifier) @local.definition)
+  (#set! definition.kind "namespace"))
+
