@@ -3376,10 +3376,6 @@
     "named": false
   },
   {
-    "type": "<<s",
-    "named": false
-  },
-  {
     "type": "<=",
     "named": false
   },
@@ -3429,14 +3425,6 @@
   },
   {
     "type": ">>r",
-    "named": false
-  },
-  {
-    "type": ">>s",
-    "named": false
-  },
-  {
-    "type": ">>u",
     "named": false
   },
   {

@@ -1,0 +1,123 @@
+========
+Division
+========
+
+u32 a = 10 / 2;
+u32 b = a /s -1;
+u32 c = b /u -1;
+u32 d = c % 2;
+u32 e = d %s -1;
+u32 f = e %u -1;
+
+---
+
+(source_file
+      (global
+        (utype)
+        (variable)
+        (bin_expr
+          (int_literal)
+          (operator)
+          (int_literal)))
+      (global
+        (utype)
+        (variable)
+        (bin_expr
+          (variable)
+          (operator)
+          (unary_expr
+            (int_literal))))
+      (global
+        (utype)
+        (variable)
+        (bin_expr
+          (variable)
+          (operator)
+          (unary_expr
+            (int_literal))))
+      (global
+        (utype)
+        (variable)
+        (bin_expr
+          (variable)
+          (operator)
+          (int_literal)))
+      (global
+        (utype)
+        (variable)
+        (bin_expr
+          (variable)
+          (operator)
+          (unary_expr
+            (int_literal))))
+      (global
+        (utype)
+        (variable)
+        (bin_expr
+          (variable)
+          (operator)
+          (unary_expr
+            (int_literal)))))
+
+
+===============
+Assign & divide
+===============
+fn test(reg u32 x) -> reg u32 {
+  x /= 2;
+  x /s = -1;
+  x /u= -1;
+  x %= 2;
+  x %s= -1;
+  x %u= -1;
+  return x;
+}
+
+---
+
+(source_file
+      (function_definition
+        (identifier)
+        (param_decl
+          (storage)
+          (utype)
+          (parameter))
+        (storage)
+        (utype)
+        (function_body
+          (assign
+            (lvalues
+              (variable))
+            (operator)
+            (int_literal))
+          (assign
+            (lvalues
+              (variable))
+            (operator)
+            (unary_expr
+              (int_literal)))
+          (assign
+            (lvalues
+              (variable))
+            (operator)
+            (unary_expr
+              (int_literal)))
+          (assign
+            (lvalues
+              (variable))
+            (operator)
+            (int_literal))
+          (assign
+            (lvalues
+              (variable))
+            (operator)
+            (unary_expr
+              (int_literal)))
+          (assign
+            (lvalues
+              (variable))
+            (operator)
+            (unary_expr
+              (int_literal)))
+          (return_statement
+            (variable)))))
