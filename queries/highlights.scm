@@ -39,6 +39,8 @@
 
 (type_alias) @type
 (access_type) @type
+(array_type
+  type: (identifier) @type)
 
 (type_definition
   alias_name: (identifier) @type.definition)
@@ -84,6 +86,7 @@
   ] @keyword.conditional.ternary)
 
 [
+  "namespace"
   "require"
   "from"
 ] @keyword.import

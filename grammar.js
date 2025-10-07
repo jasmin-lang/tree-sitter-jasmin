@@ -552,8 +552,8 @@ module.exports = grammar({
 
     storage: ($) =>
       choice(
-        seq("reg", optional($._pointer)),
-        seq("stack", optional($._pointer)),
+        "reg",
+        "stack",
         "inline",
         "global",
       ),
@@ -605,6 +605,7 @@ module.exports = grammar({
 
     array_type: ($) =>
       seq(
+        optional($._pointer),
         field("type", choice($.utype, $.identifier)),
         brackets(field("len", $._expr)),
       ),
