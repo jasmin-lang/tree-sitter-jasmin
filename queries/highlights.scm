@@ -86,6 +86,7 @@
   ] @keyword.conditional.ternary)
 
 [
+  "namespace"
   "require"
   "from"
 ] @keyword.import
